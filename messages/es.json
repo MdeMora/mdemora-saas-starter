@@ -1,0 +1,16 @@
+{
+  "Home": {
+    "title": "Tutorial de NextJS i18n",
+    "description": "Tutorial de cómo manipular i18n basado en la ruta o dominio con Nextjs v15"
+  },
+  "Step1": {
+    "title": "Título del Paso 1",
+    "EXPLANATION_PARAGRAPH1": "lorem ipsum"
+  },
+  "Step2": {
+    "title": "Título del Paso 2",
+    "EXPLANATION_PARAGRAPH1": "lorem ipsum",
+    "EXPLANATION_PARAGRAPH2": "lorem ipsum",
+    "EXPLANATION_PARAGRAPH3": "lorem ipsum"
+  }
+}

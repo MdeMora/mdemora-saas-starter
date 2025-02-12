@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { customerPortalAction } from '@/lib/payments/actions';
-import { useActionState } from 'react';
-import { TeamDataWithMembers, User } from '@/lib/db/schema';
-import { removeTeamMember } from '@/app/(login)/actions';
-import { InviteTeamMember } from './invite-team';
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { customerPortalAction } from "@/lib/payments/actions";
+import { useActionState } from "react";
+import { TeamDataWithMembers, User } from "@/lib/db/schema";
+import { removeTeamMember } from "@/app/[locale]/(login)/actions";
+import { InviteTeamMember } from "./invite-team";
+import { useTranslations } from "next-intl";
 
 type ActionState = {
   error?: string;
@@ -18,10 +19,12 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
   const [removeState, removeAction, isRemovePending] = useActionState<
     ActionState,
     FormData
-  >(removeTeamMember, { error: '', success: '' });
+  >(removeTeamMember, { error: "", success: "" });
 
-  const getUserDisplayName = (user: Pick<User, 'id' | 'name' | 'email'>) => {
-    return user.name || user.email || 'Unknown User';
+  const t = useTranslations("Home");
+
+  const getUserDisplayName = (user: Pick<User, "id" | "name" | "email">) => {
+    return user.name || user.email || "Unknown User";
   };
 
   return (
@@ -30,20 +33,21 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
       <Card className="mb-8">
         <CardHeader>
           <CardTitle>Team Subscription</CardTitle>
+          <CardTitle>{t("title")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
               <div className="mb-4 sm:mb-0">
                 <p className="font-medium">
-                  Current Plan: {teamData.planName || 'Free'}
+                  Current Plan: {teamData.planName || "Free"}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {teamData.subscriptionStatus === 'active'
-                    ? 'Billed monthly'
-                    : teamData.subscriptionStatus === 'trialing'
-                      ? 'Trial period'
-                      : 'No active subscription'}
+                  {teamData.subscriptionStatus === "active"
+                    ? "Billed monthly"
+                    : teamData.subscriptionStatus === "trialing"
+                    ? "Trial period"
+                    : "No active subscription"}
                 </p>
               </div>
               <form action={customerPortalAction}>
@@ -71,9 +75,9 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
                     />
                     <AvatarFallback>
                       {getUserDisplayName(member.user)
-                        .split(' ')
+                        .split(" ")
                         .map((n) => n[0])
-                        .join('')}
+                        .join("")}
                     </AvatarFallback>
                   </Avatar>
                   <div>
@@ -94,7 +98,7 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
                       size="sm"
                       disabled={isRemovePending}
                     >
-                      {isRemovePending ? 'Removing...' : 'Remove'}
+                      {isRemovePending ? "Removing..." : "Remove"}
                     </Button>
                   </form>
                 ) : null}
