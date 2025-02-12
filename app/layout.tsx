@@ -5,6 +5,7 @@ import { UserProvider } from "@/lib/auth";
 import { getUser } from "@/lib/db/queries";
 import { Providers } from "@/components/query-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import JotaiProvider from "@/components/jotai-provider";
 export const metadata: Metadata = {
   title: "Next.js SaaS Starter",
   description: "Get started quickly with Next.js, Postgres, and Stripe.",
@@ -40,7 +41,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              {children}
+              <JotaiProvider>{children}</JotaiProvider>
             </ThemeProvider>
           </UserProvider>
         </Providers>
