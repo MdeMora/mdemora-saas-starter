@@ -24,14 +24,6 @@ This is a starter template for building a SaaS application using **Next.js** wit
 - **Payments**: [Stripe](https://stripe.com/)
 - **UI Library**: [shadcn/ui](https://ui.shadcn.com/)
 
-## Getting Started
-
-```bash
-git clone https://github.com/nextjs/saas-starter
-cd saas-starter
-pnpm install
-```
-
 ## Running Locally
 
 Use the included setup script to create your `.env` file:
