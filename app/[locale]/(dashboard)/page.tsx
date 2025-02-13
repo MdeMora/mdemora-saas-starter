@@ -20,7 +20,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                 <a
-                  href="https://github.com/nextjs/saas-starter"
+                  href="https://github.com/MdeMora/mdemora-saas-starter"
                   target="_blank"
                 >
                   <Button className="bg-white hover:bg-gray-100 text-black border border-gray-200 rounded-full text-lg px-8 py-4 inline-flex items-center justify-center">
@@ -107,7 +107,10 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-8 lg:mt-0 flex justify-center lg:justify-end">
-              <a href="https://github.com/nextjs/saas-starter" target="_blank">
+              <a
+                href="https://github.com/MdeMora/mdemora-saas-starter"
+                target="_blank"
+              >
                 <Button className="bg-white hover:bg-gray-100 text-black border border-gray-200 rounded-full text-xl px-12 py-6 inline-flex items-center justify-center">
                   View the code
                   <ArrowRight className="ml-3 h-6 w-6" />
