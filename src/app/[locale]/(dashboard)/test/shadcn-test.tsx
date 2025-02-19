@@ -62,7 +62,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Calendar } from "@/components/ui/calendar";
-import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 import {
   Collapsible,
   CollapsibleContent,
